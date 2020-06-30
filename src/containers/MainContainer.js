@@ -46,7 +46,11 @@ changeSort = (e) => {
 
   sortStocks = () => {
     let filteredStocks = [...this.state.stocks]
+
+    if (this.state.filter !== null) {
     filteredStocks = filteredStocks.filter(stock => stock.type === this.state.filter)
+    }
+
 
     switch(this.state.sorted) {
       case "Alphabetically":
